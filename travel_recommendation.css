@@ -13,6 +13,7 @@ header {
     padding: 20px;
     background: #003366;
     color: white;
+    position: relative; /* Add this line */
 }
 
 .logo {
@@ -198,4 +199,58 @@ footer {
   outline: none;
   border-color: rgba(76, 175, 80, 0.7);
   background-color: rgba(255, 255, 255, 0.7);
+}
+
+#searchResults {
+    position: absolute;
+    top: 100%;
+    right: 0; /* Align to the right */
+    width: 400px; /* Limit the width */
+    background-color: transparent;
+    z-index: 1000;
+    display: none; /* Hide initially */
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.suggestion-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.suggestion-item img {
+    width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below image */
+}
+
+.suggestion-item .content {
+    padding: 15px;
+}
+
+.suggestion-item h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.2em; /* Adjust font size */
+}
+
+.suggestion-item p {
+    margin-bottom: 10px;
+    font-size: 0.9em; /* Adjust font size */
+    color: #555; /* Adjust text color */
+}
+
+.suggestion-item .visit-button {
+    background-color: #007bff; /* Example button color */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.9em; /* Adjust font size */
 }

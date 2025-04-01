@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelBloom</title>
     <link rel="stylesheet" href="travel_recommendation.css">
-    <link rel="script" href="travel_recommendation.js">
+    <script src="travel_recommendation.js" defer></script>
 </head>
 <body>
     <header>
@@ -19,8 +19,12 @@
         </nav>
         <div class="search-bar">
             <input type="text" placeholder="Enter a destination or keyword">
-            <button>Search</button>
-            <button>Clear</button>
+            <button onclick="loadSuggestions()">Search</button>
+            <button onclick="clearSearch()">Clear</button>
+        </div>
+        <div id="searchResults"> 
+            <div class="suggestion-item">
+            </div>
         </div>
     </header>
     <section class="hero">
