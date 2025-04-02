@@ -27,12 +27,16 @@ function loadSuggestions() {
             .then(data => {
                 // Clear previous results
                 searchResultsDiv.innerHTML = '';
+                //console.log(data);
 
-                if( searchTerm in data ) {
+                if( searchTerm in data || (data['countries'].find( (country) => country.name.toLowerCase() === searchTerm ) != undefined) ) 
+                {
+                    const suggestions = (searchTerm in data)? data[searchTerm] : (data['countries'].find( (country) => country.name.toLowerCase() === searchTerm )).cities;
+                    //console.log(suggestions);
+                    
                     // Create suggestion items based on the data
-                    data[searchTerm].forEach(item => {
-
-                        console.log(item);
+                    suggestions.forEach(item => {
+                        //console.log(item);
                         const suggestionItem = document.createElement('div');
                         suggestionItem.className = 'suggestion-item';
 
@@ -48,7 +52,7 @@ function loadSuggestions() {
                     });
 
                 } else {
-                    searchResultsDiv.innerHTML = "Sorry, no results found";
+                    searchResultsDiv.innerHTML = "<h3>Sorry, no results found</h3>";
                     searchResultsDiv.style.display = 'flex';
                 }
 
@@ -57,11 +61,11 @@ function loadSuggestions() {
             })
             .catch(error => {
                 console.error('Fetch error:', error);
-                searchResultsDiv.innerHTML = "An error occurred while fetching the data.";
+                searchResultsDiv.innerHTML = "<h3>An error occurred while fetching the data.</h3>";
                 searchResultsDiv.style.display = 'flex';
             });
     } else {
-        searchResultsDiv.innerHTML = "Please enter a search term.";
+        searchResultsDiv.innerHTML = "<h3>Please enter a search term.</h3>";
         searchResultsDiv.style.display = 'flex';
     }
 }

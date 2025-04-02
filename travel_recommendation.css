@@ -13,7 +13,7 @@ header {
     padding: 20px;
     background: #003366;
     color: white;
-    position: relative; /* Add this line */
+    position: relative;
 }
 
 .logo {
@@ -49,6 +49,7 @@ nav a {
 .hero {
     position: relative;
     /* height: 90vh; */
+    min-height: 85vh;
     background: url('https://live.staticflickr.com/916/43142094942_c28e7f61f2_h.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
@@ -89,14 +90,14 @@ nav a {
 
 h2 {
     font-size: 2em;
-    margin-bottom: 0; /* was 20px */
+    margin-bottom: 0;
 }
 
 .team-container {
-    display: flex; /* Align header and employees horizontally */
-    align-items: center; /* Vertically align items in the container */
-    justify-content: center; /* Center horizontally */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .team-members {
@@ -107,9 +108,9 @@ h2 {
 }
 
 .team-member {
-    margin: 10px; /* Reduce margin */
-    width: 180px; /* Smaller width */
-    text-align: center; /* Center text within each employee */
+    margin: 10px;
+    width: 180px;
+    text-align: center;
 }
 
 .team-member img {
@@ -122,18 +123,18 @@ h2 {
 
 .team-member h3 {
     font-size: 1em;
-    margin-bottom: 2px; /* Reduce space below name */
-    margin-top: 2px;  /* Reduce space above name */
+    margin-bottom: 2px;
+    margin-top: 2px;
 }
 
 .team-member p {
     font-size: 0.9em;
-    margin-bottom: 3px; /* Reduce space below description */
-    margin-top: 2px;  /* Reduce space above description */
+    margin-bottom: 3px;
+    margin-top: 2px;
 }
 
 .team-member .role {
-    background-color: #007bff; /* Blue background for roles */
+    background-color: #007bff;
     color: white;
     padding: 3px 8px;
     border-radius: 15px;
@@ -204,11 +205,13 @@ footer {
 #searchResults {
     position: absolute;
     top: 100%;
-    right: 0; /* Align to the right */
-    width: 400px; /* Limit the width */
+    right: 0;
+    max-height: 80vh;
+    overflow-y: auto;
+    width: 400px;
     background-color: transparent;
     z-index: 1000;
-    display: none; /* Hide initially */
+    display: none;
     flex-direction: column;
     padding: 10px;
     box-sizing: border-box;
@@ -225,7 +228,7 @@ footer {
 .suggestion-item img {
     width: 100%;
     height: auto;
-    display: block; /* Remove extra space below image */
+    display: block;
 }
 
 .suggestion-item .content {
@@ -235,22 +238,27 @@ footer {
 .suggestion-item h3 {
     margin-top: 0;
     margin-bottom: 5px;
-    font-size: 1.2em; /* Adjust font size */
+    font-size: 1.2em;
+    color: #333;
+}
+
+h3 {
+    color: #333;
 }
 
 .suggestion-item p {
     margin-bottom: 10px;
-    font-size: 0.9em; /* Adjust font size */
-    color: #555; /* Adjust text color */
+    font-size: 1em;
+    color: #555;
 }
 
 .suggestion-item .visit-button {
-    background-color: #007bff; /* Example button color */
+    background-color: #007bff;
     color: white;
-    padding: 8px 15px;
+    padding: 8px 14px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     text-decoration: none;
     cursor: pointer;
-    font-size: 0.9em; /* Adjust font size */
+    font-size: 1em;
 }

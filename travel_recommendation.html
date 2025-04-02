@@ -18,7 +18,7 @@
             </ul>
         </nav>
         <div class="search-bar">
-            <input type="text" placeholder="Enter a destination or keyword">
+            <input type="text" placeholder="Enter a destination or keyword" onkeydown="if (event.key === 'Enter') { loadSuggestions(); }">
             <button onclick="loadSuggestions()">Search</button>
             <button onclick="clearSearch()">Clear</button>
         </div>
